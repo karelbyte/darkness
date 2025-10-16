@@ -5,7 +5,7 @@ export const gameLocations: Location[] = [
     id: 'start',
     name: 'Entrada del Bosque Oscuro',
     description: 'Te encuentras en la entrada de un bosque denso y misterioso. Los árboles se alzan como gigantes silenciosos, y una niebla espesa se desliza entre sus troncos. Un sendero serpentea hacia el interior, mientras que otro camino lleva hacia una cabaña abandonada a tu derecha.',
-    image: '/placeholder-forest.svg',
+    image: '/images/init.jpg',
     exits: [
       {
         direction: 'norte',
@@ -32,7 +32,7 @@ export const gameLocations: Location[] = [
     id: 'deep-forest',
     name: 'Profundidades del Bosque',
     description: 'Has llegado a una parte más densa del bosque. La luz apenas se filtra a través del follaje, creando sombras inquietantes que se mueven con el viento. Escuchas sonidos extraños que no puedes identificar. Hay una cueva oscura a tu izquierda y un claro iluminado por la luna hacia el norte.',
-    image: '/placeholder-forest.svg',
+    image: '/images/cave.jpg',
     exits: [
       {
         direction: 'sur',
