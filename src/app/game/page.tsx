@@ -55,6 +55,11 @@ export default function GameInterface() {
         gameEngine.saveGameState();
       }
 
+      if (response.itemsAdded || response.itemsRemoved) {
+        updateCurrentLocation(); // Actualizar para reflejar cambios en items
+        gameEngine.saveGameState();
+      }
+
       if (response.itemsAdded) {
         response.itemsAdded.forEach((item: string) => {
           addMessage(`Has obtenido: ${item}`);
@@ -90,11 +95,15 @@ export default function GameInterface() {
   return (
     <div className="h-screen text-white flex flex-col">
       <div className="flex-1 overflow-hidden">
-        <LocationDisplay location={currentLocation} />
+        <LocationDisplay 
+          location={currentLocation} 
+          onCommandClick={setCommand}
+          currentCommand={command}
+        />
       </div>
       
       <div className="bg-gray-800 border-t border-gray-700">
-        <div className="container mx-auto px-4 py-4">
+        <div className="container mx-auto mt-2">
           <CommandsSection
             command={command}
             onCommandChange={setCommand}
@@ -102,6 +111,7 @@ export default function GameInterface() {
             isLoading={isLoading}
             onShowHistory={() => setShowHistory(!showHistory)}
             onShowMap={() => setShowMap(!showMap)}
+            lastMessage={messages[messages.length - 1]}
           />
         </div>
       </div>

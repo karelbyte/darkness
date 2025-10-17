@@ -19,6 +19,21 @@ export interface Item {
   name: string;
   description: string;
   takeable: boolean;
+  usable?: boolean;
+  effects?: {
+    combat?: {
+      attackBonus?: number;
+      defenseBonus?: number;
+    };
+    healing?: number;
+    unlock?: string[];
+    protection?: string[];
+    special?: string;
+  };
+  requirements?: {
+    location?: string;
+    condition?: string;
+  };
 }
 
 export interface NPC {
@@ -26,6 +41,16 @@ export interface NPC {
   name: string;
   description: string;
   dialogue: string[];
+  canFight?: boolean;
+  health?: number;
+  attack?: number;
+  drops?: string[];
+  puzzle?: {
+    question: string;
+    answer: string;
+    reward: string;
+    hint?: string;
+  };
 }
 
 export interface GameState {
@@ -33,6 +58,12 @@ export interface GameState {
   inventory: string[];
   visitedLocations: string[];
   gameProgress: Record<string, any>;
+  playerStats: {
+    health: number;
+    maxHealth: number;
+    attack: number;
+    defense: number;
+  };
 }
 
 export interface Command {
@@ -47,4 +78,7 @@ export interface CommandResponse {
   newLocation?: string;
   itemsAdded?: string[];
   itemsRemoved?: string[];
+  combat?: boolean;
+  puzzle?: boolean;
+  enemyDefeated?: boolean;
 }

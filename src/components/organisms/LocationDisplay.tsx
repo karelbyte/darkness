@@ -3,9 +3,11 @@ import { Location } from '../../lib/types/game';
 
 interface LocationDisplayProps {
   location: Location;
+  onCommandClick?: (command: string) => void;
+  currentCommand?: string;
 }
 
-export default function LocationDisplay({ location }: LocationDisplayProps) {
+export default function LocationDisplay({ location, onCommandClick, currentCommand }: LocationDisplayProps) {
   return (
     <div className="w-full relative" style={{
       backgroundImage: `url(${location.image})`,
@@ -31,6 +33,8 @@ export default function LocationDisplay({ location }: LocationDisplayProps) {
             exits={location.exits}
             items={location.items}
             npcs={location.npcs}
+            onCommandClick={onCommandClick}
+            currentCommand={currentCommand}
           />
         </div>
       </div>
