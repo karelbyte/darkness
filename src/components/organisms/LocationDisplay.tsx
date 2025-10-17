@@ -11,7 +11,7 @@ export default function LocationDisplay({ location, onCommandClick, currentComma
   return (
     <div className="w-full relative" style={{
       backgroundImage: `url(${location.image})`,
-      backgroundSize: "cover",
+      backgroundSize: "contain",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       height: "calc(100vh - 200px)"
@@ -23,7 +23,7 @@ export default function LocationDisplay({ location, onCommandClick, currentComma
             {location.name}
           </h2>
           
-          <p className="text-white text-lg leading-relaxed drop-shadow-lg" style={{ fontFamily: 'catcafe' }}>
+          <p className="absolute bottom-0 right-0 text-white w-96 text-lg leading-relaxed drop-shadow-lg pr-4 pb-4" style={{ fontFamily: 'catcafe' }}>
             {location.description}
           </p>
         </div>

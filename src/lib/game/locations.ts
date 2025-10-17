@@ -4,8 +4,8 @@ export const gameLocations: Location[] = [
   {
     id: 'start',
     name: 'Entrada del Bosque Oscuro',
-    description: 'Te encuentras en la entrada de un bosque denso y misterioso. Los árboles se alzan como gigantes silenciosos, y una niebla espesa se desliza entre sus troncos. Hacia el norte, un sendero serpentea hacia las profundidades del bosque. A tu derecha (este), una cabaña abandonada se vislumbra entre los árboles. Hacia el oeste, un claro brillante con luces danzantes llama tu atención. Una voz susurra en el viento: "La princesa Nieve ha sido raptada por Rack, el demonio maligno. Solo un valiente puede rescatarla."',
-    image: '/images/under-construction.svg',
+    description: 'Te encuentras en la entrada de un bosque denso y misterioso. Los árboles se alzan como gigantes silenciosos, y una niebla espesa se desliza entre sus troncos. Hacia el norte, un sendero serpentea hacia las profundidades del bosque. A tu derecha (este), una cabaña abandonada se vislumbra entre los árboles. Hacia el oeste, un claro brillante con luces danzantes llama tu atención. Una voz susurra en el viento algo inconpresible.',
+    image: '/images/start.jpg',
     exits: [
       {
         direction: 'norte',
