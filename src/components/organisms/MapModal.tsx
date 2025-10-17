@@ -8,105 +8,197 @@ interface MapModalProps {
 }
 
 export default function MapModal({ isOpen, onClose, gameEngine }: MapModalProps) {
+  const gameState = gameEngine.getGameState();
+  const visitedLocations = gameState.visitedLocations;
+  const currentLocation = gameState.currentLocation;
+
+  // Definir todas las ubicaciones con sus posiciones en el mapa
+  const locations = {
+    // Zona inicial
+    'start': { x: 176, y: 50, name: 'Inicio', color: '#374151' },
+    'abandoned-cabin': { x: 100, y: 100, name: 'Cabaña', color: '#374151' },
+    'cabin-attic': { x: 100, y: 150, name: 'Ático', color: '#374151' },
+    'deep-forest': { x: 176, y: 100, name: 'Bosque', color: '#374151' },
+    'fairy-grove': { x: 50, y: 50, name: 'Hadas', color: '#374151' },
+    
+    // Zona lunar
+    'moonlit-clearing': { x: 176, y: 200, name: 'Claro', color: '#374151' },
+    'ancient-ruins': { x: 176, y: 250, name: 'Ruinas', color: '#374151' },
+    'ruins-chamber': { x: 226, y: 250, name: 'Cámara', color: '#374151' },
+    'moonstone-garden': { x: 126, y: 200, name: 'Jardín', color: '#374151' },
+    
+    // Zona de cuevas
+    'mysterious-cave': { x: 250, y: 100, name: 'Cueva', color: '#374151' },
+    'cave-chamber': { x: 250, y: 150, name: 'Altar', color: '#374151' },
+    'crystal-cavern': { x: 250, y: 200, name: 'Cristales', color: '#374151' },
+    
+    // Zona de duendes
+    'goblin-camp': { x: 300, y: 100, name: 'Duendes', color: '#374151' },
+    'prisoner-cage': { x: 350, y: 100, name: 'Jaula', color: '#374151' },
+    'goblin-chief-tent': { x: 300, y: 150, name: 'Jefe', color: '#374151' },
+    'treasure-chamber': { x: 350, y: 150, name: 'Tesoro', color: '#374151' },
+    
+    // Zona de hadas
+    'fairy-queen-throne': { x: 50, y: 100, name: 'Reina', color: '#374151' },
+    'waterfall-chamber': { x: 50, y: 150, name: 'Cascada', color: '#374151' },
+    
+    // Zona del troll
+    'troll-bridge': { x: 100, y: 300, name: 'Troll', color: '#374151' },
+    
+    // Zona encantada
+    'enchanted-forest': { x: 176, y: 300, name: 'Encantado', color: '#374151' },
+    'dragon-lair': { x: 126, y: 350, name: 'Dragón', color: '#374151' },
+    'serpent-nest': { x: 226, y: 350, name: 'Serpientes', color: '#374151' },
+    'scorpion-den': { x: 176, y: 350, name: 'Escorpiones', color: '#374151' },
+    
+    // Zona final
+    'rack-fortress': { x: 176, y: 400, name: 'Fortaleza', color: '#374151' },
+    'princess-chamber': { x: 176, y: 450, name: 'Princesa', color: '#374151' },
+    
+    // Trampas
+    'mist-labyrinth': { x: 300, y: 200, name: 'Niebla', color: '#374151' },
+    'cursed-stone-circle': { x: 350, y: 200, name: 'Círculo', color: '#374151' },
+    'stone-circle-center': { x: 350, y: 250, name: 'Centro', color: '#374151' },
+    'stone-circle-exit': { x: 350, y: 150, name: 'Salida', color: '#374151' },
+    'illusion-forest': { x: 300, y: 300, name: 'Ilusiones', color: '#374151' }
+  };
+
+  // Definir conexiones entre ubicaciones
+  const connections = [
+    // Conexiones principales
+    { from: 'start', to: 'deep-forest' },
+    { from: 'start', to: 'abandoned-cabin' },
+    { from: 'start', to: 'fairy-grove' },
+    { from: 'abandoned-cabin', to: 'cabin-attic' },
+    { from: 'deep-forest', to: 'moonlit-clearing' },
+    { from: 'deep-forest', to: 'mysterious-cave' },
+    { from: 'deep-forest', to: 'goblin-camp' },
+    { from: 'deep-forest', to: 'mist-labyrinth' },
+    
+    // Conexiones zona lunar
+    { from: 'moonlit-clearing', to: 'ancient-ruins' },
+    { from: 'moonlit-clearing', to: 'moonstone-garden' },
+    { from: 'ancient-ruins', to: 'ruins-chamber' },
+    
+    // Conexiones zona cuevas
+    { from: 'mysterious-cave', to: 'cave-chamber' },
+    { from: 'mysterious-cave', to: 'crystal-cavern' },
+    
+    // Conexiones zona duendes
+    { from: 'goblin-camp', to: 'prisoner-cage' },
+    { from: 'goblin-camp', to: 'goblin-chief-tent' },
+    { from: 'goblin-camp', to: 'cursed-stone-circle' },
+    { from: 'goblin-chief-tent', to: 'treasure-chamber' },
+    
+    // Conexiones zona hadas
+    { from: 'fairy-grove', to: 'fairy-queen-throne' },
+    { from: 'fairy-queen-throne', to: 'waterfall-chamber' },
+    { from: 'waterfall-chamber', to: 'troll-bridge' },
+    
+    // Conexiones zona encantada
+    { from: 'troll-bridge', to: 'enchanted-forest' },
+    { from: 'enchanted-forest', to: 'dragon-lair' },
+    { from: 'enchanted-forest', to: 'serpent-nest' },
+    { from: 'enchanted-forest', to: 'scorpion-den' },
+    { from: 'enchanted-forest', to: 'illusion-forest' },
+    
+    // Conexiones zona final
+    { from: 'enchanted-forest', to: 'rack-fortress' },
+    { from: 'rack-fortress', to: 'princess-chamber' },
+    
+    // Conexiones trampas
+    { from: 'cursed-stone-circle', to: 'stone-circle-center' },
+    { from: 'cursed-stone-circle', to: 'stone-circle-exit' }
+  ];
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title="Mapa del Bosque" className="w-96 h-96">
+    <Modal isOpen={isOpen} onClose={onClose} title="Mapa del Bosque Oscuro" className="w-[600px] h-[600px]">
       <div className="p-4">
-        <svg width="352" height="352" viewBox="0 0 352 352" className="w-full h-full">
+        <svg width="552" height="552" viewBox="0 0 552 552" className="w-full h-full">
           <defs>
             <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
               <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
             </marker>
           </defs>
           
-          {gameEngine.getGameState().visitedLocations.includes('start') && gameEngine.getGameState().visitedLocations.includes('deep-forest') && (
-            <line x1="176" y1="50" x2="176" y2="100" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('deep-forest') && gameEngine.getGameState().visitedLocations.includes('moonlit-clearing') && (
-            <line x1="176" y1="150" x2="176" y2="200" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('moonlit-clearing') && (
-            <line x1="176" y1="250" x2="176" y2="300" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('start') && gameEngine.getGameState().visitedLocations.includes('abandoned-cabin') && (
-            <line x1="100" y1="150" x2="150" y2="150" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('deep-forest') && gameEngine.getGameState().visitedLocations.includes('mysterious-cave') && (
-            <line x1="200" y1="150" x2="250" y2="150" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('abandoned-cabin') && gameEngine.getGameState().visitedLocations.includes('cabin-attic') && (
-            <line x1="100" y1="200" x2="150" y2="200" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
-          {gameEngine.getGameState().visitedLocations.includes('mysterious-cave') && gameEngine.getGameState().visitedLocations.includes('cave-chamber') && (
-            <line x1="200" y1="200" x2="250" y2="200" stroke="#666" strokeWidth="2" markerEnd="url(#arrowhead)" />
-          )}
+          {/* Dibujar conexiones */}
+          {connections.map((connection, index) => {
+            const fromLoc = locations[connection.from as keyof typeof locations];
+            const toLoc = locations[connection.to as keyof typeof locations];
+            
+            if (visitedLocations.includes(connection.from) && visitedLocations.includes(connection.to)) {
+              return (
+                <line
+                  key={index}
+                  x1={fromLoc.x}
+                  y1={fromLoc.y}
+                  x2={toLoc.x}
+                  y2={toLoc.y}
+                  stroke="#666"
+                  strokeWidth="2"
+                  markerEnd="url(#arrowhead)"
+                />
+              );
+            }
+            return null;
+          })}
           
-          {gameEngine.getGameState().visitedLocations.includes('start') && (
-            <>
-              <circle cx="176" cy="50" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="176" y="55" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Inicio</text>
-            </>
-          )}
+          {/* Dibujar ubicaciones */}
+          {Object.entries(locations).map(([locationId, location]) => {
+            if (visitedLocations.includes(locationId)) {
+              return (
+                <g key={locationId}>
+                  <circle
+                    cx={location.x}
+                    cy={location.y}
+                    r="20"
+                    fill={location.color}
+                    stroke="#fff"
+                    strokeWidth="2"
+                  />
+                  <text
+                    x={location.x}
+                    y={location.y + 5}
+                    textAnchor="middle"
+                    fill="white"
+                    fontSize="10"
+                    fontWeight="bold"
+                  >
+                    {location.name}
+                  </text>
+                </g>
+              );
+            }
+            return null;
+          })}
           
-          {gameEngine.getGameState().visitedLocations.includes('deep-forest') && (
-            <>
-              <circle cx="176" cy="150" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="176" y="155" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Bosque</text>
-            </>
+          {/* Resaltar ubicación actual */}
+          {currentLocation && locations[currentLocation as keyof typeof locations] && (
+            <circle
+              cx={locations[currentLocation as keyof typeof locations].x}
+              cy={locations[currentLocation as keyof typeof locations].y}
+              r="25"
+              fill="none"
+              stroke="#fbbf24"
+              strokeWidth="3"
+            />
           )}
-          
-          {gameEngine.getGameState().visitedLocations.includes('moonlit-clearing') && (
-            <>
-              <circle cx="176" cy="250" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="176" y="255" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Claro</text>
-            </>
-          )}
-          
-          {gameEngine.getGameState().visitedLocations.includes('abandoned-cabin') && (
-            <>
-              <circle cx="100" cy="150" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="100" y="155" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Cabaña</text>
-            </>
-          )}
-          
-          {gameEngine.getGameState().visitedLocations.includes('mysterious-cave') && (
-            <>
-              <circle cx="250" cy="150" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="250" y="155" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Cueva</text>
-            </>
-          )}
-          
-          {gameEngine.getGameState().visitedLocations.includes('cabin-attic') && (
-            <>
-              <circle cx="100" cy="200" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="100" y="205" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Ático</text>
-            </>
-          )}
-          
-          {gameEngine.getGameState().visitedLocations.includes('cave-chamber') && (
-            <>
-              <circle cx="250" cy="200" r="20" fill="#4ade80" stroke="#fff" strokeWidth="2" />
-              <text x="250" y="205" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Cámara</text>
-            </>
-          )}
-          
-          {gameEngine.getGameState().currentLocation === 'start' && <circle cx="176" cy="50" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'deep-forest' && <circle cx="176" cy="150" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'moonlit-clearing' && <circle cx="176" cy="250" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'abandoned-cabin' && <circle cx="100" cy="150" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'mysterious-cave' && <circle cx="250" cy="150" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'cabin-attic' && <circle cx="100" cy="200" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
-          {gameEngine.getGameState().currentLocation === 'cave-chamber' && <circle cx="250" cy="200" r="25" fill="none" stroke="#fbbf24" strokeWidth="3" />}
         </svg>
         
-        <div className="mt-4 flex justify-center space-x-4 text-sm">
+        {/* Leyenda simplificada */}
+        <div className="mt-8 flex justify-center space-x-4 text-sm">
           <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-            <span className="text-gray-300">Descubierto</span>
+            <div className="w-4 h-4 bg-gray-700 rounded-full"></div>
+            <span className="text-gray-300">Ubicaciones descubiertas</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 border-2 border-yellow-400 rounded-full"></div>
-            <span className="text-gray-300">Actual</span>
+            <span className="text-gray-300">Ubicación actual</span>
           </div>
+        </div>
+        
+        <div className="mt-5 text-center text-xs text-gray-400">
+          Ubicaciones descubiertas: {visitedLocations.length} / 30
         </div>
       </div>
     </Modal>

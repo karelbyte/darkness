@@ -44,7 +44,7 @@ export default function CommandForm({
         <Button
           type="button"
           onClick={onShowMap}
-          variant="success"
+          variant="secondary"
         >
           Mapa
         </Button>

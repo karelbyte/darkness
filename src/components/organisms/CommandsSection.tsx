@@ -20,15 +20,15 @@ export default function CommandsSection({
   lastMessage
 }: CommandsSectionProps) {
   return (
-    <div className="space-y-2">
+    <div className="">
       {lastMessage && (
-        <div className="px-2 py-2 bg-gray-700 rounded-lg mx-4">
+        <div className="px-2 py-2 bg-gray-700 rounded-lg mx-2">
           <p className="text-white text-sm">{lastMessage}</p>
         </div>
       )}
       
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">Comandos</h3>
+      <div className="p-2">
+        <h3 className="text-lg font-semibold ">Comandos</h3>
         
         <CommandForm
           command={command}

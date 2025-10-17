@@ -688,6 +688,15 @@ export class GameEngine {
       case 'void_sight':
         message = 'La gema del vacío te permite ver más allá de las ilusiones del vacío. Tu percepción se expande.';
         break;
+      case 'moon_blessing':
+        message = 'La piedra lunar emite una bendición lunar. Sientes que la energía de la luna te protege.';
+        break;
+      case 'moon_growth':
+        message = 'La semilla de piedra lunar pulsa con energía de crecimiento. Sientes que tu poder se expande.';
+        break;
+      case 'rainbow_power':
+        message = 'El cristal arcoíris cambia de color constantemente. Sientes múltiples tipos de energía fluyendo por ti.';
+        break;
       default:
         message = 'El objeto pulsa con energía desconocida.';
     }

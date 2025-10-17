@@ -33,7 +33,7 @@ export default function LocationInfo({ exits, items, npcs, onCommandClick, curre
     <div className="space-y-3">
       {exits.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Salidas disponibles:</h3>
+          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Rutas disponibles</h3>
           <div className="flex flex-wrap gap-2">
             {exits.map((exit, index) => (
               <button
@@ -50,7 +50,7 @@ export default function LocationInfo({ exits, items, npcs, onCommandClick, curre
 
       {items.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Objetos visibles:</h3>
+          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Objetos visibles</h3>
           <div className="flex flex-wrap gap-2">
             {items.map((item, index) => (
               <button
@@ -67,7 +67,7 @@ export default function LocationInfo({ exits, items, npcs, onCommandClick, curre
 
       {npcs.length > 0 && (
         <div>
-          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Personajes presentes:</h3>
+          <h3 className="text-lg font-semibold mb-2 text-white drop-shadow-lg">Personajes presentes </h3>
           <div className="flex flex-wrap gap-2">
             {npcs.map((npc, index) => (
               <button

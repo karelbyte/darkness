@@ -4,7 +4,7 @@ export const gameLocations: Location[] = [
   {
     id: 'start',
     name: 'Entrada del Bosque Oscuro',
-    description: 'Te encuentras en la entrada de un bosque denso y misterioso. Los árboles se alzan como gigantes silenciosos, y una niebla espesa se desliza entre sus troncos. Un sendero serpentea hacia el interior, mientras que otro camino lleva hacia una cabaña abandonada a tu derecha. Una voz susurra en el viento: "La princesa Nieve ha sido raptada por Rack, el demonio maligno. Solo un valiente puede rescatarla."',
+    description: 'Te encuentras en la entrada de un bosque denso y misterioso. Los árboles se alzan como gigantes silenciosos, y una niebla espesa se desliza entre sus troncos. Hacia el norte, un sendero serpentea hacia las profundidades del bosque. A tu derecha (este), una cabaña abandonada se vislumbra entre los árboles. Hacia el oeste, un claro brillante con luces danzantes llama tu atención. Una voz susurra en el viento: "La princesa Nieve ha sido raptada por Rack, el demonio maligno. Solo un valiente puede rescatarla."',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -58,7 +58,7 @@ export const gameLocations: Location[] = [
   {
     id: 'abandoned-cabin',
     name: 'Cabaña Abandonada',
-    description: 'Una cabaña de madera en ruinas con ventanas rotas y puerta cerrada. El aire huele a humedad y abandono. Hay runas antiguas talladas en la puerta.',
+    description: 'Una cabaña de madera en ruinas con ventanas rotas y puerta cerrada. El aire huele a humedad y abandono. Hay runas antiguas talladas en la puerta. Hacia el oeste puedes regresar a la entrada del bosque, y hacia el norte hay una escalera de madera que lleva al ático.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -110,7 +110,7 @@ export const gameLocations: Location[] = [
   {
     id: 'cabin-attic',
     name: 'Ático de la Cabaña',
-    description: 'Un ático polvoriento lleno de objetos antiguos y libros de magia. El techo tiene agujeros por donde entra la luz del sol.',
+    description: 'Un ático polvoriento lleno de objetos antiguos y libros de magia. El techo tiene agujeros por donde entra la luz del sol. Hacia el sur puedes bajar por la escalera de regreso a la cabaña.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -162,7 +162,7 @@ export const gameLocations: Location[] = [
   {
     id: 'deep-forest',
     name: 'Profundidades del Bosque',
-    description: 'Has llegado a una parte más densa del bosque. La luz apenas se filtra a través del follaje, creando sombras inquietantes que se mueven con el viento. Escuchas sonidos extraños que no puedes identificar. Hay una cueva oscura a tu izquierda y un claro iluminado por la luna hacia el norte.',
+    description: 'Has llegado a una parte más densa del bosque. La luz apenas se filtra a través del follaje, creando sombras inquietantes que se mueven con el viento. Escuchas sonidos extraños que no puedes identificar. Hacia el sur puedes regresar a la entrada del bosque. Hacia el norte hay un claro iluminado por la luz de la luna. A tu izquierda (oeste) se encuentra una cueva oscura que parece absorber toda la luz. Hacia el este se escuchan risas maliciosas y el sonido de metal. Hacia el noreste, una densa niebla se extiende creando un laberinto natural.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -228,7 +228,7 @@ export const gameLocations: Location[] = [
   {
     id: 'fairy-grove',
     name: 'Claro de las Hadas',
-    description: 'Un hermoso claro donde las hadas danzan en círculos de luz dorada. Flores brillantes cubren el suelo y el aire está lleno de música etérea. En el centro hay un altar de cristal con runas brillantes.',
+    description: 'Un hermoso claro donde las hadas danzan en círculos de luz dorada. Flores brillantes cubren el suelo y el aire está lleno de música etérea. En el centro hay un altar de cristal con runas brillantes. Hacia el este puedes regresar a la entrada del bosque, y hacia el norte un sendero dorado lleva hacia un trono de cristal.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -278,7 +278,7 @@ export const gameLocations: Location[] = [
   {
     id: 'fairy-queen-throne',
     name: 'Trono de la Reina de las Hadas',
-    description: 'Un majestuoso trono de cristal tallado en una sola pieza. La Reina de las Hadas se sienta elegantemente, con una corona de estrellas en su cabeza. Su presencia irradia poder y bondad.',
+    description: 'Un majestuoso trono de cristal tallado en una sola pieza. La Reina de las Hadas se sienta elegantemente, con una corona de estrellas en su cabeza. Su presencia irradia poder y bondad. Hacia el sur puedes regresar al claro de las hadas, y hacia el este una cascada de agua cristalina revela una entrada oculta.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -327,7 +327,7 @@ export const gameLocations: Location[] = [
   {
     id: 'goblin-camp',
     name: 'Campamento de Duendes',
-    description: 'Un campamento desordenado lleno de tiendas de pieles y fogatas humeantes. Los duendes corretean por todas partes, riendo maliciosamente. Hay una jaula de hierro en el centro con un prisionero.',
+    description: 'Un campamento desordenado lleno de tiendas de pieles y fogatas humeantes. Los duendes corretean por todas partes, riendo maliciosamente. Hay una jaula de hierro en el centro con un prisionero. Hacia el oeste puedes regresar al bosque profundo. Hacia el norte hay una tienda más grande y ornamentada. Hacia el este se encuentra una jaula de hierro con un prisionero. Hacia el sureste, un círculo de piedras antiguas se vislumbra entre los árboles, emitiendo un resplandor siniestro.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -391,7 +391,7 @@ export const gameLocations: Location[] = [
   {
     id: 'prisoner-cage',
     name: 'Jaula del Prisionero',
-    description: 'Una jaula de hierro oxidado contiene a un elfo anciano. Sus ojos brillan con esperanza al verte. Las barras están cubiertas de runas protectoras.',
+    description: 'Una jaula de hierro oxidado contiene a un elfo anciano. Sus ojos brillan con esperanza al verte. Las barras están cubiertas de runas protectoras. Hacia el oeste puedes regresar al campamento de duendes.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -425,7 +425,7 @@ export const gameLocations: Location[] = [
   {
     id: 'goblin-chief-tent',
     name: 'Tienda del Jefe Duende',
-    description: 'Una tienda más grande decorada con trofeos y tesoros robados. El Jefe Duende, más grande y musculoso que los demás, se sienta en un trono de huesos.',
+    description: 'Una tienda más grande decorada con trofeos y tesoros robados. El Jefe Duende, más grande y musculoso que los demás, se sienta en un trono de huesos. Hacia el sur puedes regresar al campamento de duendes, y hacia el este hay una cámara llena de tesoros robados.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -473,7 +473,7 @@ export const gameLocations: Location[] = [
   {
     id: 'treasure-chamber',
     name: 'Cámara del Tesoro',
-    description: 'Una cámara llena de oro, joyas y objetos mágicos. El brillo es casi cegador. Hay trampas visibles en el suelo.',
+    description: 'Una cámara llena de oro, joyas y objetos mágicos. El brillo es casi cegador. Hay trampas visibles en el suelo. Hacia el oeste puedes regresar a la tienda del jefe duende.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -513,7 +513,7 @@ export const gameLocations: Location[] = [
   {
     id: 'waterfall-chamber',
     name: 'Cámara de la Cascada',
-    description: 'Una cámara oculta detrás de una cascada de agua cristalina. El sonido del agua es relajante y el aire está lleno de vapor brillante.',
+    description: 'Una cámara oculta detrás de una cascada de agua cristalina. El sonido del agua es relajante y el aire está lleno de vapor brillante. Hacia el oeste puedes regresar al trono de la reina de las hadas, y hacia el norte hay un puente de piedra sobre un río turbulento.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -551,7 +551,7 @@ export const gameLocations: Location[] = [
   {
     id: 'troll-bridge',
     name: 'Puente del Troll',
-    description: 'Un puente de piedra antigua cruza un río turbulento. Un troll enorme y feo custodia el puente, exigiendo un peaje a todos los que pasan.',
+    description: 'Un puente de piedra antigua cruza un río turbulento. Un troll enorme y feo custodia el puente, exigiendo un peaje a todos los que pasan. Hacia el sur puedes regresar a la cámara de la cascada, y hacia el norte se encuentra un bosque donde los árboles susurran secretos.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -593,7 +593,7 @@ export const gameLocations: Location[] = [
   {
     id: 'enchanted-forest',
     name: 'Bosque Encantado',
-    description: 'Un bosque donde los árboles susurran secretos y las hojas brillan con luz propia. El aire está lleno de magia y puedes sentir la energía mágica en cada paso.',
+    description: 'Un bosque donde los árboles susurran secretos y las hojas brillan con luz propia. El aire está lleno de magia y puedes sentir la energía mágica en cada paso. Hacia el sur puedes regresar al puente del troll. Hacia el norte hay una cueva humeante donde vive un dragón anciano. Hacia el este se encuentra un nido de serpientes gigantes. Hacia el oeste hay una guarida llena de escorpiones venenosos. Hacia el noreste, un bosque extraño donde los árboles parecen moverse y las sombras toman formas imposibles.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -672,7 +672,7 @@ export const gameLocations: Location[] = [
   {
     id: 'dragon-lair',
     name: 'Guarida del Dragón',
-    description: 'Una cueva enorme con paredes cubiertas de cristales brillantes. En el centro hay un dragón anciano durmiendo sobre un montón de tesoros. Su respiración crea pequeñas llamas.',
+    description: 'Una cueva enorme con paredes cubiertas de cristales brillantes. En el centro hay un dragón anciano durmiendo sobre un montón de tesoros. Su respiración crea pequeñas llamas. Hacia el sur puedes regresar al bosque encantado.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -717,7 +717,7 @@ export const gameLocations: Location[] = [
   {
     id: 'serpent-nest',
     name: 'Nido de Serpientes',
-    description: 'Un lugar oscuro y húmedo lleno de serpientes gigantes. Sus ojos brillan en la oscuridad y sus silbidos llenan el aire. Hay huevos brillantes en el suelo.',
+    description: 'Un lugar oscuro y húmedo lleno de serpientes gigantes. Sus ojos brillan en la oscuridad y sus silbidos llenan el aire. Hay huevos brillantes en el suelo. Hacia el oeste puedes regresar al bosque encantado.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -760,7 +760,7 @@ export const gameLocations: Location[] = [
   {
     id: 'scorpion-den',
     name: 'Guarida de Escorpiones',
-    description: 'Una cueva llena de escorpiones venenosos de diferentes tamaños. Sus pinzas hacen ruido al chocar y sus colas brillan con veneno.',
+    description: 'Una cueva llena de escorpiones venenosos de diferentes tamaños. Sus pinzas hacen ruido al chocar y sus colas brillan con veneno. Hacia el este puedes regresar al bosque encantado.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -807,7 +807,7 @@ export const gameLocations: Location[] = [
   {
     id: 'rack-fortress',
     name: 'Fortaleza de Rack',
-    description: 'Una fortaleza oscura y siniestra que se alza sobre las nubes. Las paredes están cubiertas de runas malignas y el aire está lleno de energía oscura. Esta es la última prueba antes de rescatar a la princesa Nieve.',
+    description: 'Una fortaleza oscura y siniestra que se alza sobre las nubes. Las paredes están cubiertas de runas malignas y el aire está lleno de energía oscura. Esta es la última prueba antes de rescatar a la princesa Nieve. Hacia el sur puedes regresar al bosque encantado, y hacia el norte se encuentra la cámara donde está prisionera la princesa Nieve.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -865,7 +865,7 @@ export const gameLocations: Location[] = [
   {
     id: 'princess-chamber',
     name: 'Cámara de la Princesa',
-    description: 'Una hermosa cámara iluminada por luz dorada. La princesa Nieve está sentada en un trono de cristal, esperando ser rescatada. Su belleza es incomparable y sus ojos brillan con esperanza.',
+    description: 'Una hermosa cámara iluminada por luz dorada. La princesa Nieve está sentada en un trono de cristal, esperando ser rescatada. Su belleza es incomparable y sus ojos brillan con esperanza. Hacia el sur puedes regresar a la fortaleza de Rack.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -903,13 +903,368 @@ export const gameLocations: Location[] = [
     ]
   },
 
+  // ===== UBICACIONES FALTANTES =====
+
+  {
+    id: 'moonlit-clearing',
+    name: 'Claro Iluminado por la Luna',
+    description: 'Un claro circular donde la luz de la luna se filtra perfectamente a través de las copas de los árboles, creando un ambiente místico y sereno. El suelo está cubierto de hierba suave y pequeñas flores nocturnas que brillan débilmente. Hacia el sur puedes regresar al bosque profundo. Hacia el norte, ruinas antiguas se vislumbran entre los árboles. Hacia el este hay un jardín donde crecen piedras lunares.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'sur',
+        targetLocationId: 'deep-forest',
+        description: 'Regresar al bosque profundo.'
+      },
+      {
+        direction: 'norte',
+        targetLocationId: 'ancient-ruins',
+        description: 'Ruinas antiguas se vislumbran entre los árboles.'
+      },
+      {
+        direction: 'este',
+        targetLocationId: 'moonstone-garden',
+        description: 'Un jardín donde crecen piedras lunares.'
+      }
+    ],
+    items: [
+      {
+        id: 'moonflower',
+        name: 'flor lunar',
+        description: 'Una flor que solo florece bajo la luz de la luna llena.',
+        takeable: true,
+        usable: true,
+        effects: {
+          healing: 25
+        }
+      },
+      {
+        id: 'moonstone',
+        name: 'piedra lunar',
+        description: 'Una piedra que pulsa con la energía de la luna.',
+        takeable: true,
+        usable: true,
+        effects: {
+          special: 'moon_blessing'
+        }
+      }
+    ],
+    npcs: [
+      {
+        id: 'moon-spirit',
+        name: 'espíritu lunar',
+        description: 'Un espíritu etéreo que danza bajo la luz de la luna.',
+        dialogue: [
+          'La luna me da poder...',
+          'Solo aquellos que respetan la noche pueden pasar...',
+          'Las ruinas antiguas guardan secretos...',
+          '¿Vienes en busca de conocimiento?'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
+  {
+    id: 'mysterious-cave',
+    name: 'Cueva Misteriosa',
+    description: 'Una cueva profunda y oscura donde el eco de tus pasos se pierde en la oscuridad. Extrañas formaciones rocosas crean sombras inquietantes, y el aire es frío y húmedo. Escuchas goteos de agua que resuenan en las profundidades. Hacia el este puedes regresar al bosque profundo. Hacia el norte hay una cámara más profunda en la cueva. Hacia el sur se encuentra una caverna llena de cristales brillantes.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'este',
+        targetLocationId: 'deep-forest',
+        description: 'Regresar al bosque profundo.'
+      },
+      {
+        direction: 'norte',
+        targetLocationId: 'cave-chamber',
+        description: 'Una cámara más profunda en la cueva.'
+      },
+      {
+        direction: 'sur',
+        targetLocationId: 'crystal-cavern',
+        description: 'Una caverna llena de cristales brillantes.'
+      }
+    ],
+    items: [
+      {
+        id: 'cave-crystal',
+        name: 'cristal de cueva',
+        description: 'Un cristal que brilla débilmente en la oscuridad.',
+        takeable: true,
+        usable: false
+      },
+      {
+        id: 'ancient-bone',
+        name: 'hueso ancestral',
+        description: 'Un hueso fosilizado que parece muy antiguo.',
+        takeable: true,
+        usable: false
+      }
+    ],
+    npcs: [
+      {
+        id: 'cave-spirit',
+        name: 'espíritu de la cueva',
+        description: 'Un espíritu anciano que habita en las profundidades de la cueva.',
+        dialogue: [
+          'Esta cueva ha estado aquí por siglos...',
+          'Muchos han venido buscando tesoros...',
+          'Pero pocos han regresado...',
+          '¿Qué buscas aquí, joven aventurero?'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
+  {
+    id: 'ancient-ruins',
+    name: 'Ruinas Antiguas',
+    description: 'Restos de una civilización antigua que se alzan entre la vegetación. Columnas de piedra cubiertas de musgo y paredes derruidas sugieren que aquí hubo un templo o palacio hace mucho tiempo. La energía mágica es palpable en el aire. Hacia el sur puedes regresar al claro iluminado por la luna, y hacia el este hay una cámara oculta dentro de las ruinas.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'sur',
+        targetLocationId: 'moonlit-clearing',
+        description: 'Regresar al claro iluminado por la luna.'
+      },
+      {
+        direction: 'este',
+        targetLocationId: 'ruins-chamber',
+        description: 'Una cámara oculta dentro de las ruinas.'
+      }
+    ],
+    items: [
+      {
+        id: 'ancient-tome',
+        name: 'tomo ancestral',
+        description: 'Un libro cubierto de polvo que contiene conocimientos perdidos.',
+        takeable: true,
+        usable: false
+      },
+      {
+        id: 'ruins-key',
+        name: 'llave de las ruinas',
+        description: 'Una llave de oro que parece abrir algo importante.',
+        takeable: true,
+        usable: true,
+        effects: {
+          unlock: ['ruins-chamber']
+        }
+      }
+    ],
+    npcs: [
+      {
+        id: 'ruins-guardian',
+        name: 'guardián de las ruinas',
+        description: 'Un espíritu protector que custodia los secretos de las ruinas.',
+        dialogue: [
+          'Estas ruinas guardan secretos antiguos...',
+          'Solo los dignos pueden acceder a la cámara oculta...',
+          'La llave de las ruinas te permitirá pasar...',
+          '¿Eres digno de conocer la verdad?'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
+  {
+    id: 'moonstone-garden',
+    name: 'Jardín de Piedras Lunares',
+    description: 'Un jardín místico donde crecen piedras lunares como plantas. Las piedras brillan con una luz plateada suave y parecen respirar con la energía lunar. El aire está lleno de magia y tranquilidad. Hacia el oeste puedes regresar al claro iluminado por la luna.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'oeste',
+        targetLocationId: 'moonlit-clearing',
+        description: 'Regresar al claro iluminado por la luna.'
+      }
+    ],
+    items: [
+      {
+        id: 'moonstone-seed',
+        name: 'semilla de piedra lunar',
+        description: 'Una semilla que parece estar hecha de luz lunar.',
+        takeable: true,
+        usable: true,
+        effects: {
+          special: 'moon_growth'
+        }
+      },
+      {
+        id: 'garden-blessing',
+        name: 'bendición del jardín',
+        description: 'Una bendición que otorga protección lunar.',
+        takeable: true,
+        usable: true,
+        effects: {
+          protection: ['dark_magic']
+        }
+      }
+    ],
+    npcs: [
+      {
+        id: 'garden-keeper',
+        name: 'cuidador del jardín',
+        description: 'Un ser etéreo que cuida las piedras lunares.',
+        dialogue: [
+          'Las piedras lunares son sagradas...',
+          'Solo crecen bajo la luz de la luna...',
+          'Su poder puede proteger contra la magia oscura...',
+          '¿Vienes a aprender sus secretos?'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
+  {
+    id: 'cave-chamber',
+    name: 'Cámara de la Cueva',
+    description: 'Una cámara circular tallada en la roca con precisión imposible. En el centro hay un altar de piedra negra con runas antiguas talladas. El aire aquí es denso con energía mágica antigua. Hacia el sur puedes regresar a la cueva misteriosa.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'sur',
+        targetLocationId: 'mysterious-cave',
+        description: 'Regresar a la cueva misteriosa.'
+      }
+    ],
+    items: [
+      {
+        id: 'altar-crystal',
+        name: 'cristal del altar',
+        description: 'Un cristal que pulsa con energía mágica antigua.',
+        takeable: true,
+        usable: true,
+        effects: {
+          combat: {
+            attackBonus: 3,
+            defenseBonus: 2
+          }
+        }
+      },
+      {
+        id: 'ancient-rune',
+        name: 'runa antigua',
+        description: 'Una piedra tallada con runas que brillan con poder.',
+        takeable: true,
+        usable: false
+      }
+    ],
+    npcs: []
+  },
+
+  {
+    id: 'crystal-cavern',
+    name: 'Caverna de Cristales',
+    description: 'Una caverna espectacular llena de cristales de todos los colores que brillan y parpadean como estrellas. El suelo está cubierto de cristales pequeños que crujen bajo tus pies. Hacia el norte puedes regresar a la cueva misteriosa.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'norte',
+        targetLocationId: 'mysterious-cave',
+        description: 'Regresar a la cueva misteriosa.'
+      }
+    ],
+    items: [
+      {
+        id: 'rainbow-crystal',
+        name: 'cristal arcoíris',
+        description: 'Un cristal que cambia de color constantemente.',
+        takeable: true,
+        usable: true,
+        effects: {
+          special: 'rainbow_power'
+        }
+      },
+      {
+        id: 'crystal-dust',
+        name: 'polvo de cristal',
+        description: 'Polvo brillante que parece contener energía pura.',
+        takeable: true,
+        usable: true,
+        effects: {
+          healing: 30
+        }
+      }
+    ],
+    npcs: [
+      {
+        id: 'crystal-spirit',
+        name: 'espíritu de cristal',
+        description: 'Un espíritu formado por la energía de los cristales.',
+        dialogue: [
+          'Los cristales guardan la memoria de la tierra...',
+          'Su poder puede sanar y proteger...',
+          'Pero también puede ser peligroso...',
+          '¿Respetas el poder de los cristales?'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
+  {
+    id: 'ruins-chamber',
+    name: 'Cámara Oculta de las Ruinas',
+    description: 'Una cámara secreta oculta dentro de las ruinas. Las paredes están cubiertas de frescos antiguos que muestran rituales mágicos. En el centro hay un pedestal con un artefacto brillante. Hacia el oeste puedes regresar a las ruinas antiguas.',
+    image: '/images/under-construction.svg',
+    exits: [
+      {
+        direction: 'oeste',
+        targetLocationId: 'ancient-ruins',
+        description: 'Regresar a las ruinas antiguas.'
+      }
+    ],
+    items: [
+      {
+        id: 'ancient-artifact',
+        name: 'artefacto ancestral',
+        description: 'Un artefacto que pulsa con poder mágico antiguo.',
+        takeable: true,
+        usable: true,
+        effects: {
+          combat: {
+            attackBonus: 4,
+            defenseBonus: 4
+          }
+        }
+      },
+      {
+        id: 'wisdom-scroll',
+        name: 'pergamino de sabiduría',
+        description: 'Un pergamino que contiene conocimientos ancestrales.',
+        takeable: true,
+        usable: false
+      }
+    ],
+    npcs: [
+      {
+        id: 'ancient-wisdom',
+        name: 'sabiduría ancestral',
+        description: 'Una voz que parece venir de todas las direcciones.',
+        dialogue: [
+          'Has demostrado ser digno...',
+          'Este artefacto contiene el poder de los antiguos...',
+          'Úsalo sabiamente...',
+          'La sabiduría es más poderosa que la fuerza...'
+        ],
+        canFight: false
+      }
+    ]
+  },
+
   // ===== TRAMPAS DEL BOSQUE OSCURO =====
   
   // TRAMPA 1: Laberinto de Niebla (callejón sin salida)
   {
     id: 'mist-labyrinth',
     name: 'Laberinto de Niebla',
-    description: 'Una densa niebla envuelve este lugar, creando un laberinto natural de árboles retorcidos. Los caminos se multiplican y confunden, y cada paso parece llevarte más profundo en la confusión. Las sombras se mueven de forma inquietante, y sientes que algo te observa desde la oscuridad.',
+    description: 'Una densa niebla envuelve este lugar, creando un laberinto natural de árboles retorcidos. Los caminos se multiplican y confunden, y cada paso parece llevarte más profundo en la confusión. Las sombras se mueven de forma inquietante, y sientes que algo te observa desde la oscuridad. Hacia el norte, un sendero se pierde en la niebla. Hacia el este, un camino serpentea entre árboles retorcidos. Hacia el sur, un sendero desciende hacia la oscuridad. Hacia el oeste, un camino se adentra en la espesura.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -975,7 +1330,7 @@ export const gameLocations: Location[] = [
   {
     id: 'mist-dead-end-1',
     name: 'Callejón Sin Salida - Norte',
-    description: 'Has llegado a un callejón sin salida. Los árboles forman una pared impenetrable, y la niebla se vuelve aún más densa. Una sensación de desesperación te invade. No hay más camino hacia adelante.',
+    description: 'Has llegado a un callejón sin salida. Los árboles forman una pared impenetrable, y la niebla se vuelve aún más densa. Una sensación de desesperación te invade. No hay más camino hacia adelante. Hacia el sur puedes regresar al laberinto de niebla.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -999,7 +1354,7 @@ export const gameLocations: Location[] = [
   {
     id: 'mist-dead-end-2',
     name: 'Callejón Sin Salida - Este',
-    description: 'Este camino te ha llevado a una pared de roca sólida. La niebla se acumula aquí, creando formas extrañas que parecen susurrar. Sientes que el tiempo se detiene en este lugar.',
+    description: 'Este camino te ha llevado a una pared de roca sólida. La niebla se acumula aquí, creando formas extrañas que parecen susurrar. Sientes que el tiempo se detiene en este lugar. Hacia el oeste puedes regresar al laberinto de niebla.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1026,7 +1381,7 @@ export const gameLocations: Location[] = [
   {
     id: 'mist-dead-end-3',
     name: 'Callejón Sin Salida - Sur',
-    description: 'El suelo aquí es pantanoso y peligroso. La niebla se mezcla con vapores tóxicos que hacen difícil respirar. No hay salida hacia adelante.',
+    description: 'El suelo aquí es pantanoso y peligroso. La niebla se mezcla con vapores tóxicos que hacen difícil respirar. No hay salida hacia adelante. Hacia el norte puedes regresar al laberinto de niebla.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1054,7 +1409,7 @@ export const gameLocations: Location[] = [
   {
     id: 'mist-dead-end-4',
     name: 'Callejón Sin Salida - Oeste',
-    description: 'Una cascada de agua negra cae desde una altura imposible. El agua parece absorber la luz, creando una oscuridad absoluta. No hay forma de continuar.',
+    description: 'Una cascada de agua negra cae desde una altura imposible. El agua parece absorber la luz, creando una oscuridad absoluta. No hay forma de continuar. Hacia el este puedes regresar al laberinto de niebla.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1082,7 +1437,7 @@ export const gameLocations: Location[] = [
   {
     id: 'cursed-stone-circle',
     name: 'Círculo de Piedras Malditas',
-    description: 'Un círculo de piedras antiguas se alza ante ti. Cada piedra está tallada con runas que brillan con una luz siniestra. El aire aquí es pesado y cargado de magia oscura. Sientes que este lugar tiene un poder maléfico que puede enviarte muy lejos si no tienes cuidado.',
+    description: 'Un círculo de piedras antiguas se alza ante ti. Cada piedra está tallada con runas que brillan con una luz siniestra. El aire aquí es pesado y cargado de magia oscura. Sientes que este lugar tiene un poder maléfico que puede enviarte muy lejos si no tienes cuidado. Hacia el norte puedes adentrarte en el centro del círculo de piedras, y hacia el sur puedes salir del círculo de piedras.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1137,7 +1492,7 @@ export const gameLocations: Location[] = [
   {
     id: 'stone-circle-center',
     name: 'Centro del Círculo Maldito',
-    description: 'Estás en el centro del círculo de piedras. La energía mágica es abrumadora aquí. Las runas en las piedras brillan intensamente, y sientes que el espacio mismo se distorsiona. Si no tienes protección contra la maldición, serás enviado muy lejos de aquí.',
+    description: 'Estás en el centro del círculo de piedras. La energía mágica es abrumadora aquí. Las runas en las piedras brillan intensamente, y sientes que el espacio mismo se distorsiona. Si no tienes protección contra la maldición, serás enviado muy lejos de aquí. Hacia el sur puedes salir del centro del círculo.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1186,7 +1541,7 @@ export const gameLocations: Location[] = [
   {
     id: 'stone-circle-exit',
     name: 'Salida del Círculo',
-    description: 'Has logrado salir del círculo de piedras malditas. El aire aquí es más limpio, pero aún sientes el eco de la magia oscura.',
+    description: 'Has logrado salir del círculo de piedras malditas. El aire aquí es más limpio, pero aún sientes el eco de la magia oscura. Hacia el norte puedes regresar al círculo de piedras, y hacia el este puedes continuar hacia el bosque profundo.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1208,7 +1563,7 @@ export const gameLocations: Location[] = [
   {
     id: 'illusion-forest',
     name: 'Bosque de Espejismos',
-    description: 'Este lugar es extraño. Los árboles parecen moverse cuando no los miras directamente. Las sombras toman formas de criaturas que no existen. Los caminos se duplican y triplican, creando una confusión total. Solo aquellos con percepción aguda pueden encontrar el camino correcto.',
+    description: 'Este lugar es extraño. Los árboles parecen moverse cuando no los miras directamente. Las sombras toman formas de criaturas que no existen. Los caminos se duplican y triplican, creando una confusión total. Solo aquellos con percepción aguda pueden encontrar el camino correcto. Hacia el norte, un sendero parece real pero podría ser una ilusión. Hacia el este, un camino serpentea de forma imposible. Hacia el sur, un sendero desciende hacia la nada. Hacia el oeste, un camino se pierde en la distancia.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1277,7 +1632,7 @@ export const gameLocations: Location[] = [
   {
     id: 'illusion-path-1',
     name: 'Sendero Ilusorio - Norte',
-    description: 'Este sendero se desvanece gradualmente hasta convertirse en nada. Te das cuenta de que era solo una ilusión cuando ya es demasiado tarde. No hay nada aquí excepto la confusión.',
+    description: 'Este sendero se desvanece gradualmente hasta convertirse en nada. Te das cuenta de que era solo una ilusión cuando ya es demasiado tarde. No hay nada aquí excepto la confusión. Hacia el sur puedes regresar al bosque de espejismos.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1301,7 +1656,7 @@ export const gameLocations: Location[] = [
   {
     id: 'illusion-path-2',
     name: 'Sendero Ilusorio - Este',
-    description: 'Este camino te lleva en círculos. Cada paso parece llevarte más lejos, pero en realidad estás regresando al mismo lugar. La ilusión es perfecta.',
+    description: 'Este camino te lleva en círculos. Cada paso parece llevarte más lejos, pero en realidad estás regresando al mismo lugar. La ilusión es perfecta. Hacia el oeste puedes regresar al bosque de espejismos.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1325,7 +1680,7 @@ export const gameLocations: Location[] = [
   {
     id: 'illusion-path-3',
     name: 'Sendero Ilusorio - Sur',
-    description: 'Este sendero desciende hacia un abismo que no existe. Es una ilusión perfecta que te hace creer que estás cayendo, pero en realidad estás parado en el mismo lugar.',
+    description: 'Este sendero desciende hacia un abismo que no existe. Es una ilusión perfecta que te hace creer que estás cayendo, pero en realidad estás parado en el mismo lugar. Hacia el norte puedes regresar al bosque de espejismos.',
     image: '/images/under-construction.svg',
     exits: [
       {
@@ -1352,7 +1707,7 @@ export const gameLocations: Location[] = [
   {
     id: 'illusion-path-4',
     name: 'Sendero Ilusorio - Oeste',
-    description: 'Este camino se extiende hacia el infinito, pero es solo una ilusión. No importa cuánto camines, nunca llegarás a ningún lugar.',
+    description: 'Este camino se extiende hacia el infinito, pero es solo una ilusión. No importa cuánto camines, nunca llegarás a ningún lugar. Hacia el este puedes regresar al bosque de espejismos.',
     image: '/images/under-construction.svg',
     exits: [
       {
